@@ -72,3 +72,22 @@ class Listener extends Actor {
     context.system.shutdown
   }
 }
+
+object Pi extends App {
+  // As you can see the calculate method it creates an `ActorSystem` and this is the Akka container which will contain
+  // all actors created in that `context`. An example of how to create actors in the container is the
+  // ‘system.actorOf(...)’ line in the `calculate` method. In this case we create two top level actors. If you instead
+  // were in an actor context, i.e. inside an actor creating other actors, you should use `context.actorOf(...)`. This
+  // is illustrated in the `Master` code above.
+  def calculate(nrOfWorkers: Int, nrOfElements: Int, nrOfMessages: Int): Unit = {
+    // Create an Akka system
+    val system = ActorSystem("PiSystem")
+    // Create the result listener, which will print the result and shutdown the system
+    val listener = system.actorOf(Props[Listener], name="listener")
+    // Create the master
+    val master = system.actorOf(Props(new Master(nrOfWorkers, nrOfMessages, nrOfElements, listener)), name = "master")
+    // Start the calculation
+    master ! Calculate
+  }
+  calculate(nrOfWorkers = 4, nrOfElements = 10000, nrOfMessages = 10000)
+}
