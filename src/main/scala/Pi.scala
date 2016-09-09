@@ -46,7 +46,6 @@ class Master(nrOfWorkers: Int, nrOfMessages: Int, nrOfElements: Int, listener: A
   // In the constructor of `Master`, we create a round-robin router to make it easier to spread out the work evenly
   // between the workers.
   val workerRouter = context.actorOf(Props[Worker].withRouter(RoundRobinRouter(nrOfWorkers)), name = "workerRouter")
-
   def receive = {
     case Calculate =>
       for (i <- 0 until nrOfMessages) workerRouter ! Work(i * nrOfElements, nrOfElements)
@@ -60,5 +59,16 @@ class Master(nrOfWorkers: Int, nrOfMessages: Int, nrOfElements: Int, listener: A
         // this in turn has nrOfWorkers supervised actors.
         context.stop(self)
       }
+  }
+}
+
+// The listener is straightforward. When it receives the `PiApproximation` from the `Master` it prints the result and
+// shuts down the `ActorSystem`.
+class Listener extends Actor {
+  def receive = {
+    case PiApproximation(pi, duration) =>
+      println("\n\tPi approximation: \t\t%s\n\tCalculation time: \t%s"
+        .format(pi, duration))
+    context.system.shutdown
   }
 }
