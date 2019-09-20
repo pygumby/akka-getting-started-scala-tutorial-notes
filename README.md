@@ -1,17 +1,25 @@
-# AkkaGettingStartedTutorial
+# akka-getting-started-scala-course-notes
 
-## Getting Started Tutorial (Scala): First Chapter
+**Notes on and source code from the Typesafe course "Getting Started Tutorial (Scala): First Chapter"**
 
-### Overview
+---
 
-This is just me following along an old Akka tutorial. It can be found at http://doc.akka.io/docs/akka/2.0/intro/getting-started-first-scala.html.
+* The contents of this repository are originally based on the Typesafe course [Getting Started Tutorial (Scala): First Chapter](http://doc.akka.io/docs/akka/2.0/intro/getting-started-first-scala.html).
+  This repository only represents a fraction of what is to be found within the course.
+  Also, this repository contains many additions and comments that are not part of the course.
+* The original repository can be found [here](https://github.com/akka/akka/tree/master/akka-tutorials/akka-tutorial-first).
 
-### Usage
+---
 
-Just do `sbt run` in the root directory. For me, this didn't work with JDK 8, I had to run it on a machine with JDK 7 installed.
+1. [Progress](#1-progress)
+2. [Usage](#2-usage)
 
-### Credit
+---
 
-This is what the original source code says:
+## 1. Progress
 
-    Copyright (C) 2009-2012 Typesafe Inc. <http://www.typesafe.com>
+This repository contains the entire project that is presented in the course, i.e., an app that calculates PI with Akka actors.
+
+## 2. Usage
+
+Just do `sbt run` in the root directory. For me, this didn't work with JDK 8, I had to run it with JDK 7.
