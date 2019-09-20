@@ -1,12 +1,12 @@
-# akka-getting-started-scala-course-notes
+# akka-getting-started-scala-tutorial-notes
 
-**Notes on and source code from the Typesafe course "Getting Started Tutorial (Scala): First Chapter"**
+**Notes on and source code from the Typesafe tutorial "Getting Started Tutorial (Scala): First Chapter"**
 
 ---
 
-* The contents of this repository are originally based on the Typesafe course [Getting Started Tutorial (Scala): First Chapter](http://doc.akka.io/docs/akka/2.0/intro/getting-started-first-scala.html).
-  This repository only represents a fraction of what is to be found within the course.
-  Also, this repository contains many additions and comments that are not part of the course.
+* The contents of this repository are originally based on the Typesafe tutorial [Getting Started Tutorial (Scala): First Chapter](http://doc.akka.io/docs/akka/2.0/intro/getting-started-first-scala.html).
+  This repository only represents a fraction of what is to be found within the tutorial.
+  Also, this repository contains many additions and comments that are not part of the tutorial.
 * The original repository can be found [here](https://github.com/akka/akka/tree/master/akka-tutorials/akka-tutorial-first).
 
 ---
@@ -18,7 +18,7 @@
 
 ## 1. Progress
 
-This repository contains the entire project that is presented in the course, i.e., an app that calculates PI with Akka actors.
+This repository contains the entire project that is presented in the tutorial, i.e., an app that calculates PI with Akka actors.
 
 ## 2. Usage
 
