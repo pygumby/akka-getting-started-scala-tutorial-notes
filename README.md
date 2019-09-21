@@ -11,15 +11,15 @@
 
 ---
 
-1. [Progress](#1-progress)
-2. [Usage](#2-usage)
+1. [Usage](#1-usage)
+2. [Progress](#2-progress)
 
 ---
 
-## 1. Progress
-
-This repository contains the entire project that is presented in the tutorial, i.e., an app that calculates PI with Akka actors.
-
-## 2. Usage
+## 1. Usage
 
 Just do `sbt run` in the root directory. For me, this didn't work with JDK 8, I had to run it with JDK 7.
+
+## 2. Progress
+
+This repository contains the entire project that is presented in the tutorial, i.e., an app that calculates PI with Akka actors.
